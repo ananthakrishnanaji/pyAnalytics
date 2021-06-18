@@ -2,7 +2,7 @@
 #-----------------------------
 #Data Structures
 #List - ordered collection of items, mutable(changeable) : [square ]
-list1 = [1,2,3,4,5,'a','Dhiraj',"Upadhyaya",True]  #list type of object with data
+list1 = [1,2,3,4,5,'a',"anan","krishnan",True]  #list type of object with data
 list1  #print when through spyder
 type(list1)  #type of object
 print(list1)  #print when running complete file
@@ -74,7 +74,7 @@ set2.intersection(set3) #set2 & set
 type(set2)
 print(set2)
 dir(set2)  #functions in set, cannot be subscript set2[1]
-
+intersection (set2,set3)
 #%%%frozen ( round bracket, comma)
 #frozen set- accepts iterable object as input parameter.
 tupleFZ1 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9) 
@@ -197,7 +197,8 @@ import pandas as pd
 pd?
 dir(pd)
 
-df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60.5, 70 ], 'gender':['M', 'M','M', 'F']})
+df1 = pd.DataFrame({'rollno':[1,2,3,4,5], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja","Test" ], 'marks':[ 40, 50, 60.5, 70,75 ], 'gender':['M', 'M','M', 'F','F']})
+
 df1
 type(df1) 
 
@@ -207,8 +208,11 @@ df1.describe() #description of numerical values
 df1.dtypes #data types
 df1.shape  # rows and columns
 df1.groupby('gender').size()
+
 df1.groupby('gender')['marks'].mean()
 df1.groupby('gender').aggregate({'marks': [np.mean, 'max','min','std','count']})
+
+
 
 #%% #Graphs https://python-graph-gallery.com/
 #https://matplotlib.org/
@@ -220,6 +224,7 @@ df1.groupby('gender').size().plot(kind='bar')
 plt.hist(df1['marks'])
 
 #https://seaborn.pydata.org/index.html
+
 import seaborn as sns
 # sns.set(style="ticks", color_codes=True)
 iris = sns.load_dataset("iris")
